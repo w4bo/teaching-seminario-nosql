@@ -1,0 +1,22 @@
+Installare MongoDB Community Server: 
+- https://www.mongodb.com/try/download/community
+
+Installare MongoDB Database Tools: 
+- https://www.mongodb.com/try/download/database-tools
+- copiare il contenuto nella directory <installDir>\bin di MongoDB Community Server
+
+Installare Robo3T:
+- https://robomongo.org/download
+- durante l'installazione di Robo3T, non serve installare anche Studio 3T
+
+Scaricare le collezioni:
+- https://we.tl/t-jU3G1bGVT6
+
+Importare le collezioni:
+- Comandi (da CMD di Windows) per caricare le collezioni:
+- <installDir>\bin\mongorestore --collection games --db test <percorsoFile>\games.bson
+- <installDir>\bin\mongorestore --collection restaurants --db test <percorsoFile>\restaurants.bson
+- <installDir>\bin\mongorestore --collection yelpbusiness --db test <percorsoFile>\yelp-business.bson
+- <installDir>\bin\mongoimport --collection nba2016players --db test <percorsoFile>\nba2016players.json --jsonArray
+- <installDir>\bin\mongoimport --collection nba2016teams --db test <percorsoFile>\nba2016teams.json --jsonArray
+- <installDir>\bin\mongoimport --collection cities --db test <percorsoFile>\cities.json --jsonArray
