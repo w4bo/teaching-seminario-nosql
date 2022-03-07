@@ -13,33 +13,9 @@ jobs:
       - uses: actions/setup-node@v2.5.1
         with:
           node-version: '17.3.0'
-      - name: Dummy KV DB
-        run: |
-          ls
-          cd code/kv_bash
-          source kv.sh
-          kset foo bar
-          kget foo
-          kget bar
       - name: Build Images
         run: |
           cd code
           chmod +x *.sh
           ./start.sh
           ./stop.sh
-  release:
-    needs:
-      - build
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.0
-      - name: ZIP build
-        run: zip -r slides.zip slides
-      - name: Release
-        run: |
-          npm install
-          npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
