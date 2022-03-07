@@ -17,6 +17,18 @@ IF EXIST "yelp-business.bson" (
   curl -o yelp-business.bson http://big.csr.unibo.it/projects/nosql-datasets/yelp-business.bson
 )
 
+IF EXIST "cities.json" (
+    echo "cities.json exists"
+) ELSE (
+    curl -o cities.json http://big.csr.unibo.it/projects/nosql-datasets/cities.json
+)
+
+IF EXIST "NBA2016.json" (
+    echo "NBA2016.json exists"
+) ELSE (
+    curl -o NBA2016.json http://big.csr.unibo.it/projects/nosql-datasets/NBA2016.json
+)
+
 cd ..\..\mysql\data
 IF EXIST "foodmart.sql" (
   echo foodmart.sql exists
